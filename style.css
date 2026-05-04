@@ -13,7 +13,6 @@ body {
     background-color: var(--cor-de-fundo);
     color: var(--branco);
     font-family: 'Chakra Petch', sans-serif;
-    margin: 0;
 }
 
 .conteudo-principal {
@@ -24,7 +23,6 @@ body {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
 }
 
 .titulo-principal {
@@ -37,12 +35,7 @@ body {
     color: var(--verde);
 }
 
-/* Container dos botões */
-.botoes {
-    display: block; /* Empilhados no mobile */
-    width: 100%;
-}
-
+/* Estilização dos Botões */
 .botao {
     font-family: "Chakra Petch", sans-serif;
     background-color: var(--botao-inativo);
@@ -57,30 +50,40 @@ body {
     border-left: 2px solid var(--botao-ativo);
     border-right: 2px solid var(--botao-ativo);
     border-top: none;
-    cursor: pointer; /* Adicionado para mostrar que é clicável */
+    cursor: pointer;
+}
+
+.botao.ativo {
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
 }
 
 .botao:first-child {
     border-radius: 40px 40px 0 0;
 }
 
-/* Classe de destaque controlada pelo JavaScript */
-.ativo {
-    background-color: var(--botao-ativo);
-    border-bottom: 4px solid var(--verde);
+/* Estilização dos Conteúdos (Abas) */
+.abas-textos {
+    background-color: var(--texto-fundo);
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
 }
 
-/* Responsividade: Botões lado a lado em telas maiores */
-@media screen and (min-width: 768px) {
-    .botoes {
-        display: flex;
-    }
+.aba-conteudo {
+    display: none; /* Esconde todas por padrão */
+}
 
-    .botao:first-child {
-        border-radius: 40px 0 0 0;
-    }
+.aba-conteudo.ativo {
+    display: block; /* Mostra apenas a que tiver a classe ativo */
+}
 
-    .botao:last-child {
-        border-radius: 0 40px 0 0;
-    }
+.aba-conteudo-titulo-principal {
+    font-size: 28px;
+    text-align: center;
+}
+
+.aba-conteudo-titulo-secundario {
+    text-align: center;
+    color: var(--verde);
+    text-transform: uppercase;
 }
