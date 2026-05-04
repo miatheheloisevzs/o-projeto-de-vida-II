@@ -1,158 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abas com JavaScript e CSS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet" />
-    <style>
-        :root {
-            --cor-de-fundo: #1E1E1E;
-            --verde: #aa3ff1;
-            --branco: #FFFFFF;
-            --botao-ativo: #6457f0;
-            --botao-inativo: rgba(58, 55, 94, 0.5);
-            --texto-fundo: rgba(58, 55, 94, 0.3);
-        }
-
-        body {
-            background-color: var(--cor-de-fundo);
-            color: var(--branco);
-            font-family: 'Chakra Petch', sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-
-        /* Container principal */
-        .conteudo-principal {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Título principal */
-        .titulo-principal {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .titulo-principal span {
-            color: var(--verde);
-        }
-
-        /* Container dos botões */
-        .botoes {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        /* Estilização dos botões */
-        .botao {
-            font-family: "Chakra Petch", sans-serif;
-            background-color: var(--botao-inativo);
-            color: var(--branco);
-            padding: 1em;
-            font-size: 18px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            flex: 1;
-            min-width: 150px;
-            border-bottom: 4px solid transparent;
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-
-        .botao.ativo {
-            background-color: var(--botao-ativo);
-            border-bottom: 4px solid var(--verde);
-        }
-
-        /* Container das abas */
-        .abas-textos {
-            background-color: var(--texto-fundo);
-            padding: 40px;
-            border-radius: 0 0 40px 40px;
-        }
-
-        /* Conteúdo das abas */
-        .aba-conteudo {
-            display: none; /* Esconde todas por padrão */
-        }
-
-        .aba-conteudo.ativo {
-            display: block; /* Mostra a aba ativa */
-        }
-
-        /* Títulos das abas */
-        .aba-conteudo-titulo-principal {
-            font-size: 28px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .aba-conteudo-titulo-secundario {
-            text-align: center;
-            color: var(--verde);
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abas com JavaScript e CSS</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+    --cor-de-fundo: #1E1E1E;
+    --verde: #aa3ff1;
+    --branco: #FFFFFF;
+    --botao-ativo: #6457f0;
+    --botao-inativo: rgba(58, 55, 94, 0.5);
+    --texto-fundo: rgba(58, 55, 94, 0.3);
+}
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco);
+    font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.conteudo-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.titulo-principal {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.titulo-principal span {
+    color: var(--verde);
+}
+.botoes {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.botao {
+    background-color: var(--botao-inativo);
+    color: var(--branco);
+    padding: 1em;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    min-width: 150px;
+    border-bottom: 4px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.botao.ativo {
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
+}
+.abas-textos {
+    background-color: var(--texto-fundo);
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
+}
+.aba-conteudo {
+    display: none;
+}
+.aba-conteudo.ativo {
+    display: block;
+}
+.aba-conteudo-titulo-principal {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.aba-conteudo-titulo-secundario {
+    text-align: center;
+    color: var(--verde);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+</style>
 </head>
 <body>
-    <div class="conteudo-principal">
-        <h1 class="titulo-principal">
-            Meu <span>Projetos</span>
-        </h1>
+<div class="conteudo-principal">
+<h1 class="titulo-principal">Meu <span>Projetos</span></h1>
+<div class="botoes">
+<button class="botao ativo">Projeto 1</button>
+<button class="botao">Projeto 2</button>
+<button class="botao">Projeto 3</button>
+<button class="botao">Projeto 4</button>
+</div>
+<div class="abas-textos">
+<div class="aba-conteudo ativo">
+<h3 class="aba-conteudo-titulo-principal">Criar 5 projetos em JavaScript</h3>
+<h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+</div>
+<div class="aba-conteudo">
+<h3 class="aba-conteudo-titulo-principal">Criar um portfolio com os meus 3 melhores projetos</h3>
+<h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+</div>
+<div class="aba-conteudo">
+<h3 class="aba-conteudo-titulo-principal">Atualizar meu currículo com os certificados da Alura</h3>
+<h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+</div>
+<div class="aba-conteudo">
+<h3 class="aba-conteudo-titulo-principal">Participar de eventos online</h3>
+<h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+</div>
+</div>
+</div>
+<script>
+const botoes = document.querySelectorAll('.botao');
+const abas = document.querySelectorAll('.aba-conteudo');
 
-        <!-- Botões para trocar as abas -->
-        <div class="botoes">
-            <button class="botao ativo">Projeto 1</button>
-            <button class="botao">Projeto 2</button>
-            <button class="botao">Projeto 3</button>
-            <button class="botao">Projeto 4</button>
-        </div>
-
-        <!-- Conteúdo das abas -->
-        <div class="abas-textos">
-            <div class="aba-conteudo ativo">
-                <h3 class="aba-conteudo-titulo-principal">Criar 5 projetos em JavaScript</h3>
-                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-            </div>
-            <div class="aba-conteudo">
-                <h3 class="aba-conteudo-titulo-principal">Criar um portfolio com os meus 3 melhores projetos</h3>
-                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-            </div>
-            <div class="aba-conteudo">
-                <h3 class="aba-conteudo-titulo-principal">Atualizar meu currículo com os certificados da Alura</h3>
-                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-            </div>
-            <div class="aba-conteudo">
-                <h3 class="aba-conteudo-titulo-principal">Participar de eventos online</h3>
-                <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-            </div>
-        </div>
-    </div>
-
-    <!-- Script para troca de abas -->
-    <script>
-        const botoes = document.querySelectorAll('.botao');
-        const abas = document.querySelectorAll('.aba-conteudo');
-
-        botoes.forEach((botao, index) => {
-            botao.addEventListener('click', () => {
-                // Remove a classe ativo de todos os botões
-                botoes.forEach(b => b.classList.remove('ativo'));
-                // Adiciona a classe ativo ao botão clicado
-                botao.classList.add('ativo');
-
-                // Remove a classe ativo de todas as abas
-                abas.forEach(aba => aba.classList.remove('ativo'));
-                // Adiciona a classe ativo na aba correspondente
-                abas[index].classList.add('ativo');
-            });
-        });
-    </script>
+botoes.forEach((botao, index) => {
+    botao.addEventListener('click', () => {
+        botoes.forEach(b => b.classList.remove('ativo'));
+        botao.classList.add('ativo');
+        abas.forEach(aba => aba.classList.remove('ativo'));
+        abas[index].classList.add('ativo');
+    });
+});
+</script>
 </body>
 </html>
